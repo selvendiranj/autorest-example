@@ -10,13 +10,18 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Generated\" />
+        <Folder Include="Generated\" />
     </ItemGroup>
 
-    <Target Name="SetACL" BeforeTargets="PreBuildEvent">
-        <!-- set security on binaries-->
+    <Target Name="FromSwaggerJson" BeforeTargets="PreBuildEvent">
+        <PropertyGroup>
+            <theApiReference Condition="$(theApiReference) == ''">Sample.Api</theApiReference>
+        </PropertyGroup>
         <Delete Files="Generated\*.*" />
-        <Exec Command="autorest --input-file=..\Sample.Api\$(OutputPath)swagger.json --output-folder=Generated --namespace=$(AssemblyName) --csharp"/>
+        <Exec Command="autorest --input-file=..\$(theApiReference)\$(OutputPath)swagger.json ^
+                                --output-folder=Generated ^
+                                --namespace=$(AssemblyName) ^
+                                --csharp"/>
     </Target>
 
 </Project>
