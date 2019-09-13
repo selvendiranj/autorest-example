@@ -14,4 +14,8 @@
         <DotNetCliToolReference Include="Swashbuckle.AspNetCore.Cli" Version="4.0.1" />
     </ItemGroup>
 
+    <Target Name="SetACL" AfterTargets="PostBuildEvent">
+        <!-- set security on binaries-->
+        <Exec Command="dotnet swagger tofile --output $(OutputPath)swagger.json $(OutputPath)$(AssemblyName).dll v1"/>
+    </Target>
 </Project>

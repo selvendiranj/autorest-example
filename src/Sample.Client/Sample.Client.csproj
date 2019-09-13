@@ -13,4 +13,10 @@
       <Folder Include="Generated\" />
     </ItemGroup>
 
+    <Target Name="SetACL" BeforeTargets="PreBuildEvent">
+        <!-- set security on binaries-->
+        <Delete Files="Generated\*.*" />
+        <Exec Command="autorest --input-file=..\Sample.Api\$(OutputPath)swagger.json --output-folder=Generated --namespace=$(AssemblyName) --csharp"/>
+    </Target>
+
 </Project>

@@ -1,7 +1,6 @@
-﻿using Sample.Client;
-using System;
+﻿using System;
 
-namespace ConsoleApp1
+namespace Sample.Client
 {
     class Program
     {
