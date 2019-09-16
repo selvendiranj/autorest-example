@@ -26,7 +26,7 @@ namespace Sample.Api.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(output), 200)]
         [SwaggerOperation(OperationId = "Foos_GetAll")]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<string>> GetAll()
         {
             var result = new output() { values = new string[] { "foo", "bar" } };
             return new JsonResult(result);
