@@ -1,6 +1,6 @@
 ## ClientApi code generator using autorest and swagger
-Open API standards has become webservice like contracts which helps to identify the remote API signatures so the client application can follow the standard to intechange data from API to API or App to API. 
-This sample project will guide you to auto generate client side code which can be used to consume APIs using open API documentation like swagger. The client app then interact with remote APIs using the generated local methods. The input to the generated code is API hostname/baseuri.
+Open API standards have become webservice like contracts which helps to identify the remote API signatures so the client application can follow the standard to intechange data from API to API or App to API. 
+This sample project will guide you to auto generate client side code which can be used to consume APIs using open API documentation like swagger. The client app then interact with remote APIs using the generated local methods. The only input to the generated code is API hostname/baseuri.
 ### Prerequisites
 
 * dotnet sdk (this includes dotnet cli)
@@ -123,7 +123,7 @@ Note that there is a reference to Swashbuckle.AspNetCore.Cli needed to generate 
 </Project>
 ```
 
-**After building both projects, use below the simple code to call the APIs like a method calls**
+**After building both projects, use below the simple code to call the APIs, like method calls**
 ```csharp
 class Program
 {
