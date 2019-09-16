@@ -1,4 +1,4 @@
-## ClientApi code generator using autorest and swagger
+## ClientApp code generator from Rest API (using autorest and swagger)
 Open API standards have become webservice like contracts which helps to identify the remote API signatures so the client application can follow the standard to intechange data from API to API or App to API. 
 This sample project will guide you to auto generate client side code which can be used to consume APIs using open API documentation like swagger. The client app then interact with remote APIs using the generated local methods. The only input to the generated code is API hostname/baseuri.
 ### Prerequisites
