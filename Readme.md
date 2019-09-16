@@ -1,14 +1,15 @@
 ## ClientApi code generator using autorest and swagger
-
+Open API standards has become webservice like contracts which helps to identify the remote API signatures so the client application can follow the standard to intechange data from API to API or App to API. 
+This sample project will guide you to auto generate client side code which can be used to consume APIs using open API documentation like swagger. The client app then interact with remote APIs using the generated local methods. The input to the generated code is API hostname/baseuri.
 ### Prerequisites
 
-* dotnet cli
+* dotnet sdk (this includes dotnet cli)
 * autorest cli ```npm install -g autorest```
 * Asp.Net core Rest api project
 * swagger integration to the rest api
 * A client project (can be consoleApp or webapi/webapp)
 
-**Create Sample Api project**
+**Create Sample Api project. Let the below code be a sample rest api controller**
 ```csharp
 namespace Sample.Api.Controllers
 {
@@ -34,7 +35,7 @@ namespace Sample.Api.Controllers
 }
 ```
 
-**Integrate swagger**
+**Integrate swagger documentation into startup.cs**
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -64,6 +65,9 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 ```
 
 **Sample.Api - msbuild target which generates swagger.json**
+
+Note that there is a reference to Swashbuckle.AspNetCore.Cli needed to generate swagger.json
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
@@ -88,7 +92,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 </Project>
 ```
 
-**Client - msbuild target which generates client code from swagger.json**
+**Client - msbuild target which generates client code from swagger.json  generated above**
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -119,7 +123,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 </Project>
 ```
 
-**After building both projects, use below the simple code to call the APIs like methods**
+**After building both projects, use below the simple code to call the APIs like a method calls**
 ```csharp
 class Program
 {
@@ -134,3 +138,5 @@ class Program
     }
 }
 ```
+
+Oh yeah! we are in business with remote API. Enjoy.
