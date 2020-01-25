@@ -17,9 +17,8 @@ npm install -g yarn
 yarn config set strict-ssl false --global
 npm install -g autorest
 autorest --reset
+Restart visual studio once all installations and settings are doneRestart visual studio once all installations and settings are done
 ```
-
-**Restart visual studio once all installations and settings are done**
 
 **Create Sample Api project. Let the below code be a sample rest api controller**
 ```csharp
