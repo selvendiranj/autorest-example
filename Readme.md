@@ -10,7 +10,7 @@ This sample project will guide you to auto generate client side code which can b
 * swagger integration to the rest api
 * A client project (can be consoleApp or webapi/webapp)
 
-### If you are under corporate firewall. Please do these settings as well, autorest will not install its dependencies otherwise
+### If you are behind corporate firewall. Please make these settings as well, autorest will not install its dependencies otherwise
 ```bash
 npm config set strict-ssl false --global
 npm install -g yarn
