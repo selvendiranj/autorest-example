@@ -19,6 +19,8 @@ npm install -g autorest
 autorest --reset
 ```
 
+**Restart visual studio once all installations and settings are done**
+
 **Create Sample Api project. Let the below code be a sample rest api controller**
 ```csharp
 namespace Sample.Api.Controllers
