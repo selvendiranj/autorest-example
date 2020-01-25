@@ -3,11 +3,21 @@ Open API standards have become webservice like contracts which helps to identify
 This sample project will guide you to auto generate client side code which can be used to consume APIs using open API documentation like swagger. The client app then interact with remote APIs using the generated local methods. The only input to the generated code is API hostname/baseuri.
 ### Prerequisites
 
-* dotnet sdk (this includes dotnet cli)
-* autorest cli ```npm install -g autorest```
+* Install dotnet sdk (this includes dotnet cli as well)
+* Install NodeJs (this includes npm package manager as well)
+* Install autorest cli ```npm install -g autorest```
 * Asp.Net core Rest api project
 * swagger integration to the rest api
 * A client project (can be consoleApp or webapi/webapp)
+
+## If you are under corporate firewall. Please do these settings as well, autorest will not install its dependencies otherwise
+```bash
+npm config set strict-ssl false --global
+npm install -g yarn
+yarn config set strict-ssl false --global
+npm install -g autorest
+autorest --reset
+```
 
 **Create Sample Api project. Let the below code be a sample rest api controller**
 ```csharp
